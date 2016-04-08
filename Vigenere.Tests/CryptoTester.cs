@@ -6,7 +6,6 @@ namespace Vigenere.Tests
     [TestClass]
     public class CryptoTester
     {
-
         private string _alphabet;
         private string _key;
         private string _expectedCipherText;
@@ -95,6 +94,24 @@ namespace Vigenere.Tests
             {
                 exception = e;
             }
+            Assert.IsNotNull(exception);
+        }
+        [TestMethod]
+        public void SettingEmptyAlphabetShouldThrowAnArgumentNullException()
+        {
+            Exception exception = null;
+            Crypter crypter = new Crypter();
+            
+            crypter.SetKey("r");
+            try
+            {
+                crypter.SetAlphabet(string.Empty);
+            }
+            catch (ArgumentNullException e)
+            {
+                exception = e;
+            }
+
             Assert.IsNotNull(exception);
         }
     }
