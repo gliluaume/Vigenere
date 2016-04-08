@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vigenere", "Vigenere\Vigenere.csproj", "{4553B03A-065F-4675-BC8B-4D5A546B4394}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vigenere.Tests", "Vigenere.Tests\Vigenere.Tests.csproj", "{A6AF2770-2E92-4619-8058-35481926BF87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4553B03A-065F-4675-BC8B-4D5A546B4394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4553B03A-065F-4675-BC8B-4D5A546B4394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4553B03A-065F-4675-BC8B-4D5A546B4394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4553B03A-065F-4675-BC8B-4D5A546B4394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6AF2770-2E92-4619-8058-35481926BF87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6AF2770-2E92-4619-8058-35481926BF87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6AF2770-2E92-4619-8058-35481926BF87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6AF2770-2E92-4619-8058-35481926BF87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
