@@ -16,7 +16,7 @@ namespace Vigenere
             crypter.SetKey("BEBOP");
             crypter.SetAlphabet("ABCDEFGHIJKLMNOPQRSTUVWXYZ. :/");
 
-            string clearText = crypter.Decode("GIMWRJXBDXPRTLCEZ:CFSBIDEQCANCFGSEEFAQOCSSUKPRQAQ/OKSOET");
+            string clearText = crypter.Decode("GIMWRJXBDXPRTLCEZ:CFSBIDEQCANCFGSEEFAQOCSSUKRPQAQ/OKSOET");
             Console.WriteLine(clearText);
 
 
