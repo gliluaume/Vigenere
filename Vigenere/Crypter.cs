@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Vigenere
 {
@@ -18,12 +14,15 @@ namespace Vigenere
 
         public void SetAlphabet(string alphabet)
         {
+            if (String.IsNullOrWhiteSpace(alphabet))
+                throw new ArgumentNullException("alphabet");
+
             this._alphabet = alphabet.ToUpper().ToCharArray();
         }
 
         public void SetAlphabet(char[] alphabet)
         {
-            this._alphabet = string.Concat(alphabet).ToUpper().ToCharArray();
+            SetAlphabet(string.Concat(alphabet));
         }
 
         public string Encode(string text)
@@ -33,9 +32,16 @@ namespace Vigenere
 
         public string Decode(string cipherText)
         {
-            return RunProcedure(cipherText, (textCharRank, keyCharRank) => (_alphabet.Length * (keyCharRank + 1) - keyCharRank + textCharRank) % _alphabet.Length);
+            // le calcul compliqué sert à avoir un modulo positif
+            return RunProcedure(cipherText, (textCharRank, keyCharRank) => (((- keyCharRank + textCharRank) % _alphabet.Length) + _alphabet.Length) % _alphabet.Length);
         }
-
+        /// <summary>
+        /// Joue l'algorithme de chiffrement / dechiffrement. 
+        /// La distinction entre les deux se joue uniquement sur le calcul de l'index de la lettre chiffrée.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="indexCalculator">fonction lambda permettant de calculer l'index de la lettre chiffrée (ou déchiffrée)</param>
+        /// <returns></returns>
         private string RunProcedure(string text, Func<int, int, int> indexCalculator)
         {
             CheckKeyAndUpperizeIt();
@@ -94,7 +100,7 @@ namespace Vigenere
             {
                 if (GetCharRankInAplhabet(_key[i]) < 0)
                 {
-                    throw new ArgumentException("Key is contains char that does not exist in alphabet !");
+                    throw new ArgumentException("Key contains char that does not exist in alphabet !");
                 }
             }
         }
